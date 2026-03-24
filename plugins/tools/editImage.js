@@ -28,7 +28,7 @@ let handler = async (m, { conn, bot, text }) => {
     let result = null;
     for (let j = 0; j < 30; j++) {
       await new Promise(resolve => setTimeout(resolve, 5000));
-      const checkRes = await bot.scrapy.tools.checkResult({ rid: editRes.recordId });
+      const checkRes = await bot.Api.tools.checkResult({ rid: editRes.recordId });
       if (checkRes?.completed && checkRes?.resultUrl) {
         result = checkRes.resultUrl;
         break;

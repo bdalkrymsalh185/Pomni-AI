@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const ff = async (m, { conn, text, command }) => {
-    const filePath = path.join(process.cwd(), 'settings', 'database.json');
+    const filePath = path.join(process.cwd(), 'system', 'database.json');
     const data = fs.readFileSync(filePath, 'utf8');
     const database1 = JSON.parse(data);
     
