@@ -4,7 +4,7 @@ import UltraDB from "./system/UltraDB.js";
 import sub from './sub.js';
 
 /* =========== Client ========== */
-const client = new Client({
+uconst client = new Client({
   phoneNumber: '20123456789', // Bot number
   prefix: [".", "/", "!"],
   fromMe: false,
@@ -59,3 +59,7 @@ if (client.commandSystem) {
 sub(client)
   }
 }, 2000);
+
+process.on('uncaughtException', (e) => {
+    if (e.message.includes('rate-overlimit')) {}
+});
